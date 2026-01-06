@@ -1,0 +1,7 @@
+name: guipractice
+version: '1.0-SNAPSHOT'
+main: me.Pro2021CA.guipractice.Guipractice
+api-version: '1.21'
+commands:
+  gui:
+    usage: /<command>
