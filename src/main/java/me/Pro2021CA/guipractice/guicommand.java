@@ -23,7 +23,7 @@ import java.util.ListIterator;
 import java.util.UUID;
 
 public class guicommand implements CommandExecutor {
-    public static final HashMap<UUID, Inventory> guis = new HashMap<>();
+    public static final HashMap<UUID, String> guis = new HashMap<>();
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String @NotNull [] strings) {
         if (commandSender instanceof Player p) {
@@ -32,7 +32,7 @@ public class guicommand implements CommandExecutor {
             ItemStack itemStack = new ItemStack(Material.GRASS_BLOCK);
             inventory.setItem(8, itemStack);
             //itemStack.getItemMeta().setItemName("Go survival mode"); not working
-            guis.put(p.getUniqueId(), inventory);
+            guis.put(p.getUniqueId(), "gui");
             p.openInventory(inventory);
         }
         return true;

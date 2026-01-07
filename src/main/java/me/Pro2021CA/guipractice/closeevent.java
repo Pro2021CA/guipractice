@@ -11,7 +11,7 @@ import static me.Pro2021CA.guipractice.guicommand.guis;
 public class closeevent implements Listener {
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e){
-        if (e.getInventory() == guis.get(e.getPlayer().getUniqueId())) {
+        if (guis.get(e.getPlayer().getUniqueId()) != null) {
             guis.remove(e.getPlayer().getUniqueId());
         }
     }

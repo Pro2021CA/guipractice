@@ -11,7 +11,7 @@ import static me.Pro2021CA.guipractice.guicommand.guis;
 public class clickevent implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
-        if (e.getInventory() == guis.get(e.getWhoClicked().getUniqueId())){
+        if ("gui" == guis.get(e.getWhoClicked().getUniqueId())){
             e.setCancelled(true);
             if (e.getSlot() == 0){
                 e.getWhoClicked().getWorld().spawnEntity(e.getWhoClicked().getLocation(), EntityType.LIGHTNING_BOLT);
@@ -21,6 +21,8 @@ public class clickevent implements Listener {
             else if (e.getSlot() == 8){
                 e.getWhoClicked().setGameMode(GameMode.SURVIVAL);
             }
+        }else if ("players" == guis.get(e.getWhoClicked().getUniqueId())){
+            e.setCancelled(true);
         }
     }
 }

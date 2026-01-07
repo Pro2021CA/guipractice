@@ -12,6 +12,7 @@ public final class Guipractice extends JavaPlugin {
         getCommand("gui").setExecutor(new guicommand());
         getServer().getPluginManager().registerEvents(new closeevent(), this);
         getServer().getPluginManager().registerEvents(new clickevent(), this);
+        getCommand("players").setExecutor(new playerscommand()); // gui with online players
     }
 
     @Override
